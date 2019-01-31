@@ -76,14 +76,6 @@ The **IronBeers** Project will include the following features:
 
 ## Submission
 
-- Upon completion, run the following commands:
-
-  ```
-  git add .
-  git commit -m "done"
-  git push origin master
-  ```
-
 - Create Pull Request so your TAs can check up your work.
 
 
@@ -91,11 +83,8 @@ The **IronBeers** Project will include the following features:
 
 :exclamation: At the very beginning we will offer you to shoot for the stars: as a **bonus** focus on **mobile first** design!
 
-### Iteration 1: Create the App
 
-Easy peasy! Using  `create-react-app`  you should build a new app. Feel free to name it as you want it, but if you need some inspiration, we called **Reactive BeersJS**.
-
-### Iteration 2: Home Page
+### Iteration 1: Home Page
 
 Create the **Home Page**. The view should include three views:
 
@@ -109,7 +98,7 @@ Feel free about the design, but here is how we did it:
 <img src="https://user-images.githubusercontent.com/23629340/40706572-933439b8-63ee-11e8-8d65-538fb59f79ab.png" height="600px" />
 </div>
 
-### Iteration 3: The `Header`
+### Iteration 2: The `Header`
 
 On every view (except for the `home`), we should add a **header** with a `link` to the root of the `app`.
 
@@ -117,7 +106,7 @@ On every view (except for the `home`), we should add a **header** with a `link` 
 <img src="https://user-images.githubusercontent.com/23629340/40707029-cb2fce12-63ef-11e8-939c-f673ff3b965d.png" height="100px" />
 </div>
 
-### Iteration 4: List the Beers
+### Iteration 3: List the Beers
 
 On the `/beers` route, we should display all the beers from the Database. So, in this case, you need to call the API `https://ironbeer-api.herokuapp.com/beers/all`. The API will return an array of `Beers` objects.
 
@@ -138,7 +127,7 @@ You should display the following from each of the beers:
 The first time you call the API, it might take a bit to respond. It's hosted on Heroku, and it goes to sleep after 30 minutes, you know! :wink:
 :::
 
-### Iteration 5: Single Beer
+### Iteration 4: Single Beer
 
 When a user click on one of the beers, you should display a detailed view of it, including the following fields:
 
@@ -154,7 +143,7 @@ When a user click on one of the beers, you should display a detailed view of it,
 <img src="https://user-images.githubusercontent.com/23629340/40707269-84bedd78-63f0-11e8-86c3-b14efb9323a7.png" height="600px" />
 </div>
 
-### Iteration 6: Random Beer
+### Iteration 5: Random Beer
 
 On the `/random-beer` route, we will render a single beer that will be retrieved from the database. The endpoint will do all the job for us, so we need to call to `https://ironbeer-api.herokuapp.com/beers/random`. We should receive an object including all the info about a beer. The same way we did with the **Single Beer** view, we should render the following fields:
 
@@ -170,7 +159,7 @@ On the `/random-beer` route, we will render a single beer that will be retrieved
 <img src="https://user-images.githubusercontent.com/23629340/40707457-05a22990-63f1-11e8-84b2-a86143b7b821.png" height="600px" />
 </div>
 
-### Iteration 7: Create New Beer
+### Iteration 6: Create New Beer
 
 Finally, on the `/new-beer` route, we should render a form where user could create new beers. The `form` should include the following fields:
 
