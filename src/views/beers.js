@@ -38,7 +38,7 @@ class Beers extends Component {
 
     return (
 
-      <article>
+      <article style={{paddingTop: '4rem'}}>
         { 
           error ? <p>{error.message}</p> : null 
         }

@@ -8,14 +8,11 @@ class RandomBeer extends Component {
       beerList: JSON.parse(localStorage.getItem('beers')),
       randomBeer: {},
     }   
-
-    this.getRandomBeer = this.getRandomBeer.bind(this)
   }
 
   getRandomBeer () {
     const random = Math.floor(Math.random() * this.state.beerList.length - 1)
     const beer = this.state.beerList[random]
-    console.log(this.state, beer)
     this.setState({
       randomBeer: beer
     })
@@ -28,15 +25,22 @@ class RandomBeer extends Component {
 
   renderBeer() {
     const { randomBeer } = this.state
+
     return (
-      <article>
-        <div key={randomBeer._id} className="card">
-          <img style={{width: '15%', height: '15%'}} className="card-img-top" src={randomBeer.image_url} alt={randomBeer.name} />
-        <div>
-          <nav>
-          <span className="card-text">{randomBeer.name}</span>
-          <span>{randomBeer.attenuation_level}</span>
+      <article style={{marginTop: '6rem', textAlign: 'center'}}>
+        <div key={randomBeer._id}>
+          <img style={{width: '15%', height: '15%', marginBottom: '1rem'}} className="card-img-top" src={randomBeer.image_url} alt={randomBeer.name} />
+        <div className="card-body">
+          <nav style={{display: 'flex', justifyContent: 'space-between'}}>
+          <p style={{textAlign: 'left', fontSize: '1.5rem'}}>{randomBeer.name}</p>
+          <p style={{fontSize: '1.5rem', fontWeight: 'bold', opacity: '0.5'}}>{randomBeer.attenuation_level}</p>
           </nav>
+          <nav style={{display: 'flex', justifyContent: 'space-between'}}>
+            <p style={{opacity: '0.5'}}>{randomBeer.tagline}</p>
+            <p style={{fontWeight: 'bold'}}>{randomBeer.first_brewed}</p>
+          </nav>
+          <p style={{textAlign: 'justify'}}>{randomBeer.description}</p>
+          <p style={{textAlign: 'left', fontWeight: 'bold', opacity: '0.5'}}>{randomBeer.contributed_by}</p>
         </div>
         </div>
       </article>
@@ -45,8 +49,11 @@ class RandomBeer extends Component {
 
   render() {
     return (
-      <div>  
+      <div style={{marginTop: '2rem', textAlign: 'center'}}>  
         {this.renderBeer()}
+        <button 
+          onClick={() => this.getRandomBeer()}
+          style={{height: '5rem', fontSize: '1.2rem', fontWeight: 'bold', width: '5rem', marginTop: '1rem', marginBottom: '1rem', borderRadius: '50%'}} className="btn btn-danger">New</button>
       </div>
     )
   }

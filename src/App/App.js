@@ -3,30 +3,31 @@ import { Route, NavLink, Switch} from 'react-router-dom'
 import HomePage from '../views/HomePage'
 import home from '../assets/home.png'
 import Beers from '../views/beers'
-// import NewBeers from '../components/api/newbeer'
+import SingleBeer from '../views/singlebeer'
 import RandomBeer from '../views/randombeer'
+import NewBeer from '../views/newbeer'
 
 class App extends Component {
 
   render() {
-
     return (
-    <div>
-      <button 
-        style={{width: '100%'}}
-        className="btn btn-primary">
-        <NavLink exact to="/" ><img src={home} alt="home"/></NavLink>
-      </button>
+      <div style={{width: '100%'}}>
+        <nav style={{position: 'fixed', width: '100%', zIndex: 200, top: 0}} >
+          <NavLink exact to="/"><button 
+            style={{width: '100%', borderRadius: '0px', borderBottom: 'solid 2px white'}}
+            className="btn btn-primary"><img src={home} alt="home"/>
+          </button>
+          </NavLink>
+        </nav>
     
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/beers" component={Beers}/>
-        {/* <Route path="/beer/:beerId" component={BeerSingle}/> */}
-        <Route path="/random-beer" component={RandomBeer} />
-        {/* <Route path="/new-beer" component={NewBeer} /> */}
-      </Switch>
-
-   </div>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/beers" component={Beers}/>
+          <Route path="/beer/:beerId" component={SingleBeer}/>
+          <Route path="/random-beer" component={RandomBeer} />
+          <Route path="/new-beer" component={NewBeer} />
+        </Switch>
+      </div>
     )
   }
 }
