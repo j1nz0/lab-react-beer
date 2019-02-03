@@ -8,8 +8,8 @@ class AllBeer extends Component {
     const { beer } = this.props
     
     return ( 
-      <div style={{marginTop: '3rem'}} key={beer._id} 
-      style={{width: '100%', textAlign: 'center', marginTop: '2rem'}}>
+      <div key={beer._id} 
+      style={{width: '100%', textAlign: 'center', marginTop: '3rem'}}>
 
       <Link to={`/beer/${beer._id}`}><img 
         style={{width: '15%', height: '15%'}} 

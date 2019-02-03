@@ -8,7 +8,8 @@ class Beers extends Component {
     this.state = {
       isLoading: true,
       beers: localStorage.getItem('beers') ? JSON.parse(localStorage.getItem('beers')) : [],
-      error: null
+      error: null, 
+      _isMounted: false
     }    
   }
 
@@ -23,14 +24,15 @@ class Beers extends Component {
       .then(data => {
         this.setState({ 
           beers: data, 
-          isLoading: false
+          isLoading: false, 
+          _isMounted: true
         })
         localStorage.setItem('beers', JSON.stringify(data) )
       }).catch(error => this.setState({ error, isLoading: false}))
   }
 
-  componentDidMount = () => {
-    this.getBeers()
+  componentDidMount = async () => {
+    await this.getBeers()
   }
 
   render() {
