@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { unifyString } from '../helper/search-transform'
 import AllBeer from './allBeers'
 
 class Beers extends Component {
@@ -9,8 +10,19 @@ class Beers extends Component {
       isLoading: true,
       beers: localStorage.getItem('beers') ? JSON.parse(localStorage.getItem('beers')) : [],
       error: null, 
-      _isMounted: false
+      _isMounted: false, 
+      filter: ''
     }    
+  }
+
+  get filteredBeers () {
+    const { filter, beers } = this.state 
+    if (!filter) {
+      return beers
+    } else {
+      console.log(beers.filter(f => unifyString(f.name).indexOf(unifyString(filter)) > -1))
+    return beers.filter(f => unifyString(f.name).indexOf(unifyString(filter)) > -1)
+    }
   }
 
   get showLoading () {
@@ -36,18 +48,29 @@ class Beers extends Component {
   }
 
   render() {
-    const { error, beers } = this.state
+    const { error, filter } = this.state
 
     return (
-
-      <article style={{paddingTop: '4rem'}}>
+      <div style={{paddingTop: '4rem'}}>
+      <div style={{marginLeft: '1rem', marginRight: '1rem'}}>
+        <input 
+          className="form-control ds-input"
+          id="search-input"
+          style={{marginTop: '1rem'}}
+          type="search"
+          placeholder="Search..."
+          value={filter}
+          onChange={({ target }) => this.setState({ filter: target.value })}
+          />
+      </div>
+      <article>
         { 
           error ? <p>{error.message}</p> : null 
         }
     
         {
           !this.showLoading ? (
-            beers.map(beer => (
+            this.filteredBeers.map(beer => (
                 <AllBeer 
                 key={beer._id}
                 beer={beer}
@@ -61,6 +84,7 @@ class Beers extends Component {
             </div>
           )}
         </article>
+      </div>
           )
         }
       }
