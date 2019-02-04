@@ -14,7 +14,7 @@ class App extends Component {
       <div style={{width: '100%'}}>
         <nav style={{position: 'fixed', width: '100%', zIndex: 200, top: 0}} >
           <NavLink exact to="/"><button 
-            style={{width: '100%', borderRadius: '0px', borderBottom: 'solid 2px white'}}
+            style={{width: '100%', borderRadius: '0px', borderBottom: 'solid 2px white', backgroundColor: '#2196f3'}}
             className="btn btn-primary"><img src={home} alt="home"/>
           </button>
           </NavLink>

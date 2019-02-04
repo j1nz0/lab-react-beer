@@ -68,13 +68,15 @@ class HomePage extends Component {
         </div>
         <div className="card-body">
         <h1 style={headerStyle}>New Beer</h1>
-          <p className="card-text">
+          <p 
+            className="card-text"
+            style={{marginBottom: '2rem'}}>
           Around the world, there are many traditional and ancient starch-based drinks classed as beer. In Africa, there are various ethnic beers made from sorghum or millet, such as Oshikundu in Namibia and Tella in Ethiopia. Kyrgyzstan also has a beer made from millet; it is a low alcohol, somewhat porridge-like drink called "Bozo". Bhutan, Nepal, Tibet and Sikkim also use millet in Chhaang, a popular semi-fermented rice/millet drink in the eastern Himalayas. Further east in China are found Huangjiu and Choujiu—traditional rice-based drinks related to beer.
           The Andes in South America has Chicha, made from germinated maize (corn); while the indigenous peoples in Brazil have Cauim, a traditional drink made since pre-Columbian times by chewing manioc so that an enzyme (amylase) present in human saliva can break down the starch into fermentable sugars this is similar to Masato in Peru.
           Some beers which are made from bread, which is linked to the earliest forms of beer, are Sahti in Finland, Kvass in Russia and Ukraine, and Bouza in Sudan.          </p>
           <Link 
             to="/new-beer">
-            <button style={{fontWeight: 'bold', width: '100%'}} className="btn btn-dark">
+            <button style={{fontWeight: 'bold', width: '100%'}} className="btn btn-danger">
             <img style={{height: '22px', float: 'left'}} src={plus} alt="arrow"/> Create new beer</button>
           </Link>
         </div>

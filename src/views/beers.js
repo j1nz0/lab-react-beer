@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { unifyString } from '../helper/search-transform'
 import AllBeer from './allBeers'
+import FloatingAction from '../components/floatingAction'
 
 class Beers extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class Beers extends Component {
     const { error, filter } = this.state
 
     return (
-      <div style={{paddingTop: '4rem'}}>
+      <div style={{paddingTop: '4rem'}} id="search-bar">
       <div style={{marginLeft: '1rem', marginRight: '1rem'}}>
         <input 
           className="form-control ds-input"
@@ -84,6 +85,7 @@ class Beers extends Component {
             </div>
           )}
         </article>
+        <FloatingAction />
       </div>
           )
         }
