@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
-
+import swal from 'sweetalert'
 
 class NewBeer extends Component {
   constructor(props) {
@@ -49,6 +49,7 @@ class NewBeer extends Component {
         ReactDOM.findDOMNode(this.messageForm).reset()
         return res.json()
       })
+      .then(swal("Good job!", "Your beer has been saved successfully", "success"))
       .then((res) => 
         console.log(res))
           .catch(error => console.log(error))
