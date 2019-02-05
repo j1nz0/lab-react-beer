@@ -6,7 +6,7 @@ import NavigationIcon from '@material-ui/icons/Navigation';
 
 const styles = theme => ({
   fab: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing.unit
   }
 });
 
@@ -28,7 +28,7 @@ class FloatingAction extends Component {
           color="secondary" 
           variant="extended" 
           style={{backgroundColor: 'rgb(33, 150, 243)', position: 'fixed', zIndex: 200, top: '40rem', marginLeft: '18rem'}}
-          aria-label="Delete"
+          aria-label="Top"
           onClick={this.handleSubmit.bind(this)}
           className={styles.fab}>
           <NavigationIcon  />
