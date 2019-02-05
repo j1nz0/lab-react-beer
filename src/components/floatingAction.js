@@ -27,7 +27,7 @@ class FloatingAction extends Component {
         <Fab 
           color="secondary" 
           variant="extended" 
-          style={{backgroundColor: 'rgb(33, 150, 243)', position: 'fixed', zIndex: 200, top: '40rem', marginLeft: '18rem'}}
+          style={{backgroundColor: 'rgb(33, 150, 243)', position: 'fixed', zIndex: 200, top: 30, marginLeft: '18rem'}}
           aria-label="Top"
           onClick={this.handleSubmit.bind(this)}
           className={styles.fab}>
